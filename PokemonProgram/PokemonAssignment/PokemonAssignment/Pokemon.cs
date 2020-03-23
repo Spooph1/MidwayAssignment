@@ -77,6 +77,8 @@ namespace Pokemon
         /// <returns>The amount of damage that was applied so we can print it for the user</returns>
         public float Attack(float dmgFac, float typeFac)
         {
+            //With the calculation for the dmg you gave us, it was a one-shot fiesta, so i made it more similar to the actual calculation i Pokemon. 
+            //Which means that it's still the strongest element that wins, but atleast it takes a couple of turns.
             float totalAttack = (float)Math.Round(10f * dmgFac * typeFac);
             return totalAttack;
         }
@@ -100,7 +102,9 @@ namespace Pokemon
         public float CalculateElementalEffects(Elements attackingType, Elements defendingType)
         {
             float calDamage;
-            if(attackingType==Elements.Fire && defendingType==Elements.Grass || attackingType == Elements.Grass && defendingType == Elements.Water || attackingType == Elements.Water && defendingType == Elements.Fire)
+            if(attackingType == Elements.Fire && defendingType == Elements.Grass ||
+               attackingType == Elements.Grass && defendingType == Elements.Water ||
+               attackingType == Elements.Water && defendingType == Elements.Fire)
             {
                 calDamage = 2f;
                 return calDamage;

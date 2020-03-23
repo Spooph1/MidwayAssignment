@@ -81,11 +81,11 @@ namespace Pokemon
                                         {
                                             for(int i=0; i < roster.Count; i++)
                                             {
-                                               if( inputs[0] == roster[i].Name)
+                                               if( inputs[0] == roster[i].Name && roster[i].Hp>0)
                                                 {
                                                     player = roster[i];
                                                 }
-                                                if (inputs[1] == roster[i].Name)
+                                                if (inputs[1] == roster[i].Name && roster[i].Hp > 0)
                                                 {
                                                     enemy = roster[i];
                                                 }
@@ -100,7 +100,7 @@ namespace Pokemon
                                 {
                                     Console.WriteLine("Remember to write the name of two different Pokemons");
                                 }
-                                //Console.WriteLine("Remember to write the name of two different Pokemons");
+                            
                             }
                         //BE SURE TO CHECK THE POKEMON NAMES THE USER WROTE ARE VALID (IN THE ROSTER) AND IF THEY ARE IN FACT 2!
                         //if everything is fine and we have 2 pokemons let's make them fight
@@ -156,6 +156,8 @@ namespace Pokemon
                                     }
 
                                     //CALCULATE AND APPLY DAMAGE
+                                    //I know that this is very ugly to look at, but it works, and that meant i could focus on our other assignments.
+                                    //If we didn't have the other assignments, I would re-write the functions, so it was possible to just call "Attack" and then calculate the dmg inside the pokemon class
                                     float typeFact = 0f;
                                     float dmgFact = 0f;
                                     float totalAttack = 0f;
